@@ -1,0 +1,60 @@
+$default: (
+  primary: (
+    light: '235, 16%, 15%',
+    base: '247, 15%, 11%',
+    dark: '228, 16%, 6%'
+  ),
+  secondary: (
+    light: '235, 16%, 15%',
+    base: '247, 15%, 11%',
+    dark: '228, 16%, 6%'
+  ),
+  dark: (
+    light: '0, 0%, 20%',
+    base: '0, 0%, 10%',
+    dark: '0, 0%, 0%'
+  ),
+  light: (
+    light: '0, 0%, 100%',
+    base: '0, 0%, 90%',
+    dark: '0, 0%, 80%'
+  ),
+  danger: (
+    light: '0, 100%, 60%',
+    base: '0, 100%, 50%',
+    dark: '0, 100%, 40%'
+  ),
+);
+
+$dark: (
+  primary: (
+    light: '100, 16%, 85%',
+    base: '100, 15%, 81%',
+    dark: '100, 16%, 86%'
+  ),
+  secondary: (
+    light: '235, 16%, 85%',
+    base: '247, 15%, 81%',
+    dark: '228, 16%, 86%'
+  ),
+  dark: (
+    light: '0, 0%, 0%',
+    base: '0, 0%, 10%',
+    dark: '0, 0%, 20%'
+  ),
+  light: (
+    light: '0, 0%, 100%',
+    base: '0, 0%, 90%',
+    dark: '0, 0%, 80%'
+  ),
+  danger: (
+    light: '0, 100%, 60%',
+    base: '0, 100%, 50%',
+    dark: '0, 100%, 40%'
+  ),
+);
+
+$all: (
+  default: $default,
+  dark: $dark
+);

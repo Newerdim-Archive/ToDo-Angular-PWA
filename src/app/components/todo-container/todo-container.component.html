@@ -1,0 +1,49 @@
+<div class="todo-container">
+
+  <section>
+
+    <h2>Create new</h2>
+
+    <app-create-todo-form (createTodo)="createTodo($event)"></app-create-todo-form>
+
+  </section>
+
+  <section>
+
+    <h2>To Do - {{uncompletedTodos.length}}</h2>
+
+    <p *ngIf="uncompletedTodos.length === 0">
+      Everything is done!
+    </p>
+
+    <div class="todo-list">
+
+      <app-todo
+        *ngFor="let todo of uncompletedTodos"
+        [todo]="todo"
+        (deleteTodo)="deleteTodo($event)"
+        (updateTodo)="updateTodo($event)"
+      ></app-todo>
+
+    </div>
+
+  </section>
+
+  <section *ngIf="completedTodos.length > 0">
+
+    <h2>Completed - {{completedTodos.length}}</h2>
+
+    <div class="todo-list">
+
+      <app-todo
+        *ngFor="let todo of completedTodos"
+        [todo]="todo"
+        (deleteTodo)="deleteTodo($event)"
+        (updateTodo)="updateTodo($event)"
+      ></app-todo>
+
+    </div>
+    
+  </section>
+
+</div>

@@ -1,0 +1,16 @@
+@function lighter($color-name, $opacity: 1) {
+  @return hsla(var(--color-#{$color-name}-light), $opacity);
+}
+
+@function darker($color-name, $opacity: 1) {
+  @return hsla(var(--color-#{$color-name}-dark), $opacity);
+}
+
+@function base($color-name, $opacity: 1) {
+  @return hsla(var(--color-#{$color-name}-base), $opacity);
+}
+
+@function text($color-name, $tone-name: base, $opacity: 1) {
+  @return hsla(var(--color-#{$color-name}-#{$tone-name}-text), $opacity);
+}
+

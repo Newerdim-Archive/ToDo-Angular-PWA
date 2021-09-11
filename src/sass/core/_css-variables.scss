@@ -1,0 +1,11 @@
+@use 'utilities/mixins/css-variables-creator';
+
+:root {
+  @include css-variables-creator.create-color-palette(default);
+
+  @include css-variables-creator.create-media-query();
+}
+
+[data-theme="dark"] {
+  @include css-variables-creator.create-color-palette(dark);
+}

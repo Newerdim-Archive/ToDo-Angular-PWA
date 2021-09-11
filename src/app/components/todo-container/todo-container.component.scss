@@ -1,0 +1,28 @@
+@use 'utilities/functions/converter';
+
+.todo-container {
+  max-width: converter.px-to-rem(800px);
+  margin: auto;
+  padding: 1.5rem;
+
+  section {
+    margin-bottom: 4rem;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 1rem;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

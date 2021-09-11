@@ -1,0 +1,11 @@
+<textarea
+  appAutoResizeTextarea
+  rows="1"
+  class="editable-text"
+  [readOnly]="!isEdited"
+  (dblclick)="enableEditing()"
+  (focusout)="disableEditing()"
+  (keydown.enter)="save()"
+  [formControl]="textInput"
+>
+</textarea>

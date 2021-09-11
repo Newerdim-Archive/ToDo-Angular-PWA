@@ -1,0 +1,22 @@
+:host {
+  width: 100%;
+  display: flex;
+}
+
+.editable-text {
+  overflow: hidden;
+  resize: none;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+
+  &:read-only {
+    cursor: default;
+    outline: none;
+  }
+}

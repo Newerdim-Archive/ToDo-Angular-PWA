@@ -1,0 +1,12 @@
+@use 'utilities/functions/string';
+@use 'sass:math';
+
+@function px-to-rem($px-value) {
+  $value: string.replace(#{$px-value}, 'px', '');
+
+  $value: string.to-number($value);
+
+  $rem-value: math.div($value, 16) + 'rem';
+
+  @return unquote($rem-value);
+}

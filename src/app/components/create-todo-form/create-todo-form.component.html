@@ -1,0 +1,29 @@
+<div class="create-todo-form-container">
+
+  <fa-icon [icon]="faPlusCircle"></fa-icon>
+
+  <form
+    class="create-todo-form"
+    [formGroup]="createTodoForm"
+    (ngSubmit)="create()"
+  >
+
+    <input
+      type="text"
+      formControlName="todoName"
+      placeholder="A new todo name!"
+    >
+
+    <div style="color: red" *ngIf="isSubmitted">
+
+      <div *ngIf="name.errors?.required">
+        Name is required.
+      </div>
+
+    </div>
+
+    <button class="btn" type="submit">Save</button>
+
+  </form>
+
+</div>

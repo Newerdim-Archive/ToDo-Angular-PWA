@@ -1,0 +1,24 @@
+@use 'utilities/functions/converter';
+@use 'utilities/functions/color';
+
+.create-todo-form-container {
+  display: flex;
+  padding: 0.7rem 0.8rem;
+  border-radius: converter.px-to-rem(10px);
+  border: converter.px-to-rem(2px) solid color.lighter(dark);
+
+  fa-icon {
+    font-size: 1.1rem;
+  }
+
+  .create-todo-form {
+    display: flex;
+    width: 100%;
+
+    input {
+      margin: 0 0.8rem;
+      width: 100%;
+      border-bottom: converter.px-to-rem(1px) solid color.lighter(dark);
+    }
+  }
+}

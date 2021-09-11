@@ -1,0 +1,32 @@
+@use 'utilities/functions/color';
+@use 'utilities/functions/converter';
+
+.todo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: converter.px-to-rem(10px);
+  border: converter.px-to-rem(2px) solid color.lighter(dark);
+  transition: box-shadow 300ms;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem color.lighter(dark);
+  }
+
+  &.completed {
+    text-decoration: line-through;
+  }
+
+  .uncompleted, .completed {
+    font-size: 1.1rem;
+  }
+
+  app-editable-text {
+    margin: 0 0.8rem;
+  }
+
+  .delete:hover {
+    color: color.base(danger);
+  }
+}

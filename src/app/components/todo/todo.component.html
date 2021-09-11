@@ -1,0 +1,24 @@
+<div class="todo" [class.completed]="todo.isCompleted">
+  <button
+    class="uncompleted btn"
+    (click)="completed()"
+    *ngIf="!todo.isCompleted"
+  >
+    <fa-icon [icon]="faSquare"></fa-icon>
+  </button>
+
+  <button
+    class="completed btn"
+    (click)="completed()"
+    *ngIf="todo.isCompleted"
+  >
+    <fa-icon [icon]="faCheckSquare"></fa-icon>
+  </button>
+
+  <app-editable-text [text]="todo.name" (changeText)="updateName($event)"></app-editable-text>
+
+  <button class="delete btn" (click)="delete()">
+    <fa-icon [icon]="faTimes"></fa-icon>
+  </button>
+
+</div>

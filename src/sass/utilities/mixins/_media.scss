@@ -1,0 +1,29 @@
+@mixin xs {
+  @media (min-width: var(--media-xs)) {
+    @content;
+  }
+}
+
+@mixin s {
+  @media (min-width: var(--media-s)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: var(--media-md)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: var(--media-lg)) {
+    @content;
+  }
+}
+
+@mixin xlg {
+  @media (min-width: var(--media-xlg)) {
+    @content;
+  }
+}

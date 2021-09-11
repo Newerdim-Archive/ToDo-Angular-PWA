@@ -1,0 +1,64 @@
+@function replace($string, $search, $replace) {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@function split($string, $separator) {
+  $split-arr: ();
+  $index: str-index($string, $separator);
+
+  @while $index != null {
+    $item: str-slice($string, 1, $index - 1);
+    $split-arr: append($split-arr, unquote($item));
+    $string: str-slice($string, $index + 1);
+    $index: str-index($string, $separator);
+  }
+
+  $split-arr: append($split-arr, unquote($string));
+
+  @return $split-arr;
+}
+
+@function to-number($string) {
+  $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+  $numbers: 0 1 2 3 4 5 6 7 8 9;
+
+  $result: 0;
+
+  @for $i from 1 through str-length($string) {
+    $character: str-slice($string, $i, $i);
+    $index: index($strings, $character);
+
+    @if not $index {
+      @return false;
+    }
+
+    $number: nth($numbers, $index);
+    $result: $result * 10 + $number;
+  }
+
+  @return $result;
+}
+
+@function to-hsl-color($colors) {
+  $string: replace($colors, " ", "");
+  $string: replace($string, "%", "");
+
+  $list: split($string, ',');
+
+  $hue: nth($list, 1);
+  $saturation: nth($list, 2);
+  $lightness: nth($list, 3);
+
+  $hsl: hsl(
+      to-number($hue),
+      to-number($saturation) * 1%,
+      to-number($lightness) * 1%);
+
+  @return $hsl;
+}

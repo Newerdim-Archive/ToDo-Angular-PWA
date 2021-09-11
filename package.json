@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:prod": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "ngx-autosize": "^1.8.4",
     "ngx-indexed-db": "^9.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

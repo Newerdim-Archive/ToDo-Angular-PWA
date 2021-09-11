@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  todo-angular-pwa:
+    container_name: todo-angular-pwa
+    image: ${DOCKER_REGISTRY-}todo-angular-pwa
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "8090:80"

@@ -1,0 +1,21 @@
+@use 'utilities/variables/media';
+
+@use 'utilities/variables/themes';
+@use 'utilities/functions/color-helper';
+
+@mixin create-media-query() {
+  @each $name, $value in media.$sizes {
+    --media-#{$name}: #{$value};
+  }
+}
+
+@mixin create-color-palette($theme-name) {
+  $theme-palette: map-get(themes.$all, $theme-name);
+
+  @each $color-name, $tones in $theme-palette {
+    @each $tone-name, $color in $tones {
+      --color-#{$color-name}-#{$tone-name}: #{$color};
+      --color-#{$color-name}-#{$tone-name}-text: #{color-helper.create-text-color($color, $theme-name)}
+    }
+  }
+}

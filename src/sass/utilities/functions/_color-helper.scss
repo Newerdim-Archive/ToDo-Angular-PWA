@@ -1,0 +1,21 @@
+@use 'utilities/functions/string';
+@use 'utilities/variables/themes';
+@use 'utilities/functions/color';
+
+@function create-text-color($color, $theme-name) {
+  $theme-palette: map-get(themes.$all, $theme-name);
+
+  $dark-palette: map-get($theme-palette, dark);
+  $dark-color: map-get($dark-palette, base);
+
+  $light-palette: map-get($theme-palette, light);
+  $light-color: map-get($light-palette, base);
+
+  $color: string.to-hsl-color($color);
+
+  @if (lightness($color) > 50) {
+    @return $dark-color;
+  }
+
+  @return $light-color;
+}
