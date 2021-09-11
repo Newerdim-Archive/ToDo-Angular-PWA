@@ -39,6 +39,7 @@ export class CreateTodoFormComponent implements OnInit {
       isCompleted: false
     });
 
+    this.isSubmitted = false;
     this.createTodoForm.reset();
   }
 
